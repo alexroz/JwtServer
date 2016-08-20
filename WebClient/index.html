@@ -1,0 +1,50 @@
+﻿<html ng-app="secureWebApiApp">
+<head>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/main.css" rel="stylesheet" />
+</head>
+<body ng-controller="personController">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/index" class="navbar-brand">Secure Web APi</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <a href="/index" class="navbar-brand">Home</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid main">
+
+        <div ng-view></div>
+
+        <hr />
+        <footer>
+            <p>
+                &copy; <span id="year"></span> - Dootrix Sample
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/app/app.js"></script>
+    <script src="Scripts/app/helper/http-service.js"></script>
+    <script src="Scripts/app/login-module.js"></script>
+    <script src="Scripts/app/person-module.js"></script>
+    <script>
+        var obj = document.getElementById('year');
+        obj.innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>

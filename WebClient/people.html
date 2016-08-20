@@ -1,0 +1,42 @@
+﻿
+<h1 ng-init="init()">Person Information</h1>
+
+<h2>
+    <span>{{userName}}</span>
+    <input type="button" class="btn" value="logoff" ng-click="logout()" />
+</h2>
+
+<table class="table table-striped table-striped table-bordered" ng-show="People!=null && People.length > 0">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="Per in People">
+        <td>
+            <span>{{Per.name}}</span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table class="table table-striped table-striped table-bordered" ng-show="Claims!=null && Claims.length > 0">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="claim in Claims">
+            <td>
+                <span>{{claim.type}} - {{claim.value}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="alert alert-success" role="alert" ng-show="Message.length>0">{{Message}}</div>
+        <div class="alert alert-danger" role="alert"  ng-show="ErrorMessage.length>0">{{ErrorMessage}}</div>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+﻿<html>
+<head>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/main.css" rel="stylesheet" />
+
+    <style>
+        .main-body {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/index" class="navbar-brand">Simple Web Client</a>
+            </div>
+            <div class="navbar-collapse collapse">
+            </div>
+        </div>
+    </div>
+    <div class="container main-body">
+
+        <div class="alert alert-danger" role="alert" id="errorMessage"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="userName">User name</label>
+                                <input type="email" class="form-control" id="userName" placeholder="Email" value="richard@penrose.me.uk">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" value="Test123!">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="loginButton">Log in</button>
+                        </form>
+                        <hr/>
+                        <h3>Results</h3>
+                        <div class="form-group">
+                            <label for="accessToken">Access Token</label>
+                            <input type="text" class="form-control" id="accessToken">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Refresh Token</label>
+                            <input type="text" class="form-control" id="refreshToken">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Token Expires</label>
+                            <input type="text" class="form-control" id="tokenExpiry">
+                        </div>
+
+                        <textarea class="form-control" rows="3" id="loginResults"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Use Refresh Token</div>
+                    <div class="panel-body">
+                        <form>
+
+                            <div class="form-group">
+                                <label for="refreshTokenInput">Refresh Token</label>
+                                <input type="text" class="form-control" id="refreshTokenInput" />
+                            </div>
+                            <button type="submit" class="btn btn-default" id="refreshButton">Fetch Token</button>
+                        </form>
+                        <hr />
+                        <h3>Results</h3>
+                        <div class="form-group">
+                            <label for="accessTokenRefresh">Access Token</label>
+                            <input type="text" class="form-control" id="accessTokenRefresh">
+                        </div>
+                        <div class="form-group">
+                            <label for="refreshTokenRefresh">Refresh Token</label>
+                            <input type="text" class="form-control" id="refreshTokenRefresh">
+                        </div>
+
+                        <textarea class="form-control" rows="3" id="resultsRefresh"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Call Secure API</div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="apiUrl">API Url</label>
+                                <input type="text" class="form-control" id="apiUrl" value="/api/people/get">
+                            </div>
+                            <div class="form-group">
+                                <label for="secureApiAccessToken">Access Token</label>
+                                <input type="text" class="form-control" id="secureApiAccessToken">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="callAPIButtom">Call Api</button>
+                        </form>
+                        <hr />
+                        <h3>Results</h3>
+                        <textarea class="form-control" rows="3" id="apiResults"></textarea>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>
+                &copy; <span id="year"></span> - Dootrix Sample
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/TestScript.js"></script>
+    <script>
+        var obj = document.getElementById('year');
+        obj.innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
