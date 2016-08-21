@@ -31,6 +31,8 @@ namespace JwtAuthServer.Providers
             //file.Close();
 
             var cert = new X509Certificate2(@"C:\temp\Server.pfx", "", X509KeyStorageFlags.MachineKeySet);
+
+            // unnecessary complexity, just testing
             var privateKey = (RSACryptoServiceProvider)cert.PrivateKey;
 
             var audienceId = ConfigurationManager.AppSettings["as:AudienceId"];
